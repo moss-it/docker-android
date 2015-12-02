@@ -1,4 +1,4 @@
-FROM moss/java
+FROM moss/java_oracle
 MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
 
 # Build-Variables
