@@ -22,10 +22,10 @@ RUN apt-get update -y && \
     # install 32-bit dependencies require by the android sdk
     dpkg --add-architecture i386 && \
     apt-get update -y && \
-    apt-get install -y libncurses5:i386 libstdc++6:i386 zlib1g:i386 && \
+    apt-get install -y libncurses5:i386 libstdc++6:i386 zlib1g:i386 --no-install-recommends && \
 
     # install Ant and Gradle
-    apt-get install -y gradle
+    apt-get install -y gradle --no-install-recommends
 
     # Installs Android SDK
 RUN curl -sL ${ANDROID_SDK_URL} | tar xz -C . && \
