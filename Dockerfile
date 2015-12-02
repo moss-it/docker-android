@@ -4,9 +4,10 @@ MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
 # Build-Variables
 ENV ANDROID_SDK_FILE android-sdk_r24.4.1-linux.tgz
 ENV ANDROID_SDK_URL https://dl.google.com/android/${ANDROID_SDK_FILE}
-ENV ANDROID_BUILD_TOOLS_VERSION 23.0.2
+ENV ANDROID_BUILD_TOOLS_VERSION 23.0.1
 ENV ANDROID_APIS android-21,android-23
 ENV ANDROID_ABI sys-img-armeabi-v7a-android-21,sys-img-armeabi-v7a-android-23
+ENV ANDROID_EXTRA extra-android-m2repository
 
 # Set Environment Variables
 ENV GRADLE_HOME /usr/share/gradle
@@ -29,7 +30,7 @@ RUN apt-get update -y && \
 
     # Installs Android SDK
 RUN curl -sL ${ANDROID_SDK_URL} | tar xz -C . && \
-    echo y | android update sdk -a -u -t platform-tools,${ANDROID_APIS},build-tools-${ANDROID_BUILD_TOOLS_VERSION},${ANDROID_ABI} && \
+    echo y | android update sdk -a -u -t platform-tools,${ANDROID_APIS},build-tools-${ANDROID_BUILD_TOOLS_VERSION},${ANDROID_ABI},${ANDROID_EXTRA} && \
 
     # Clean up
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
