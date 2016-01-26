@@ -1,10 +1,15 @@
+#: title  : moss/android
+#: author : "Thiago Almeida" <thiagoalmeidasa@gmail.com>
+#: version: "1.0.0"
 FROM moss/java_oracle
 MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
+
+LABEL version="1.0.0"
 
 # Build-Variables
 ENV ANDROID_SDK_FILE android-sdk_r24.4.1-linux.tgz
 ENV ANDROID_SDK_URL https://dl.google.com/android/${ANDROID_SDK_FILE}
-ENV ANDROID_BUILD_TOOLS_VERSION 23.0.1
+ENV ANDROID_BUILD_TOOLS_VERSION 23.0.2
 ENV ANDROID_APIS android-21,android-23
 ENV ANDROID_ABI sys-img-armeabi-v7a-android-21,sys-img-armeabi-v7a-android-23
 ENV ANDROID_EXTRA extra-android-m2repository
