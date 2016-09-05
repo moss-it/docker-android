@@ -1,10 +1,10 @@
-#: title  : moss/android
-#: author : "Thiago Almeida" <thiagoalmeidasa@gmail.com>
-#: version: "1.1.0"
+#: Title   : moss/android
+#: Author  : "Thiago Almeida" <thiagoalmeidasa@gmail.com>
+#: Version : "1.1.1"
 FROM moss/java_oracle
 MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
 
-LABEL version="1.1.0"
+LABEL version="1.1.1"
 
 # Build variables
 ENV ANDROID_SDK_FILE android-sdk_r24.4.1-linux.tgz
@@ -25,7 +25,7 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 WORKDIR "/opt"
 
 RUN apt-get update -y && \
-    # install 32-bit dependencies require by the android sdk
+    # Install 32-bit dependencies require by the android sdk
     dpkg --add-architecture i386 && \
     apt-get update -y && \
     apt-get install -y libncurses5:i386 libstdc++6:i386 zlib1g:i386 --no-install-recommends
