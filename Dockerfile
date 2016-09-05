@@ -9,7 +9,7 @@ LABEL version="1.1.0"
 # Build variables
 ENV ANDROID_SDK_FILE android-sdk_r24.4.1-linux.tgz
 ENV ANDROID_SDK_URL https://dl.google.com/android/${ANDROID_SDK_FILE}
-ENV ANDROID_BUILD_TOOLS_VERSION 24.0.1
+ENV ANDROID_BUILD_TOOLS_VERSION 24.0.2
 ENV ANDROID_APIS android-21
 ENV ANDROID_ABI sys-img-armeabi-v7a-android-21,sys-img-armeabi-v7a-android-21
 ENV ANDROID_EXTRA extra-android-m2repository
