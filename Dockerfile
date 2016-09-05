@@ -6,6 +6,8 @@ MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
 
 LABEL version="1.1.1"
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # Build variables
 ENV ANDROID_SDK_FILE android-sdk_r24.4.1-linux.tgz
 ENV ANDROID_SDK_URL https://dl.google.com/android/${ANDROID_SDK_FILE}
