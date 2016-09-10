@@ -1,18 +1,16 @@
-#: Title   : moss/android
-#: Author  : "Thiago Almeida" <thiagoalmeidasa@gmail.com>
-#: Version : "1.1.1"
+#: title  : moss/android
+#: author : "Thiago Almeida" <thiagoalmeidasa@gmail.com>
+#: version: "1.1.0"
 FROM moss/java_oracle
 MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
 
-LABEL version="1.1.1"
-
-ENV DEBIAN_FRONTEND noninteractive
+LABEL version="1.1.0"
 
 # Build variables
 ENV ANDROID_SDK_FILE android-sdk_r24.4.1-linux.tgz
 ENV ANDROID_SDK_URL https://dl.google.com/android/${ANDROID_SDK_FILE}
 ENV ANDROID_BUILD_TOOLS_VERSION 24.0.2
-ENV ANDROID_APIS android-24
+ENV ANDROID_APIS android-21,android-24
 ENV ANDROID_ABI sys-img-armeabi-v7a-android-21,sys-img-armeabi-v7a-android-21
 ENV ANDROID_EXTRA extra-android-m2repository
 
@@ -27,7 +25,7 @@ ENV PATH $PATH:$GRADLE_HOME/bin
 WORKDIR "/opt"
 
 RUN apt-get update -y && \
-    # Install 32-bit dependencies require by the android sdk
+    # install 32-bit dependencies require by the android sdk
     dpkg --add-architecture i386 && \
     apt-get update -y && \
     apt-get install -y libncurses5:i386 libstdc++6:i386 zlib1g:i386 --no-install-recommends
@@ -46,7 +44,7 @@ RUN echo "no" | android create avd \
     --force \
     --device "Nexus 6" \
     --name MOSS_NEXUS6 \
-    --target android-24 \
+    --target android-21 \
     --abi armeabi-v7a \
     --skin WVGA800
 
