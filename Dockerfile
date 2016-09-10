@@ -46,7 +46,7 @@ RUN echo "no" | android create avd \
     --force \
     --device "Nexus 6" \
     --name MOSS_NEXUS6 \
-    --target android-21 \
+    --target android-24 \
     --abi armeabi-v7a \
     --skin WVGA800
 
